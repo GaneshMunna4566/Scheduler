@@ -1,7 +1,7 @@
 {
     "builds": [{
         "src": "scheduler/wsgi.py",
-        "use": "@vercel-python-wsgi",
+        "use": "@ardnt/vercel-python-wsgi",
         "config": { "maxLambdaSize": "15mb", "runtime": "Python3.11.1" }
     }],
     "routes": [
