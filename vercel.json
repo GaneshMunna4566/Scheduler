@@ -1,13 +1,13 @@
 {
     "builds": [{
-        "src": "elevate/wsgi.py",
-        "use": "@ardnt/vercel-python-wsgi",
+        "src": "scheduler/wsgi.py",
+        "use": "@vercel-python-wsgi",
         "config": { "maxLambdaSize": "15mb", "runtime": "Python3.11.1" }
     }],
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "elevate/wsgi.py"
+            "dest": "scheduler/wsgi.py"
         }
     ]
 }
