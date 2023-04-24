@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+from corsheaders.defaults import default_headers
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -27,7 +28,17 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+CORS_ALLOWED_ORIGINS = ["http://localhost:8000", "http://127.0.0.1:8080"]
+CORS_ORIGIN_WHITELIST = (
 
+    'localhost:8080',
+    'localhost:8000',
+    'localhost:8081',
+    'localhost',
+    'localhost:8888',
+)
+
+CSRF_TRUSTED_ORIGINS = ['http://localhost:8080']
 # Application definition
 
 INSTALLED_APPS = [
@@ -123,3 +134,14 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+
+
+
+
+
+
+
+
+
+
+
